@@ -11,26 +11,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          actions: const [
-            Icon(
-              Icons.star,
+        appBar: AppBar(),
+        body: Row(
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.blue,
+              ),
+            ),
+            Container(
+              width: 100,
+              color: Colors.green,
             ),
           ],
-          title: Text(
-            '앱임',
-          ),
-          leading: Icon(
-            Icons.star,
-          ),
         ),
-        body: SizedBox(
-            child: ElevatedButton(
-          onPressed: () {},
-          child: Text(
-            'btn',
-          ),
-        )),
       ),
     );
   }
