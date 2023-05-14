@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+You can see progress in the commit history
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
