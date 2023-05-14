@@ -12,18 +12,42 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: Row(
-          children: [
-            Expanded(
-              child: Container(
-                color: Colors.blue,
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('assets/bongocat.png'),
+              SizedBox(
+                width: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '고양이 팝니다',
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                    Text('금호동 3가'),
+                    Text('70000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Icon(
+                          Icons.favorite,
+                        ),
+                        Text(
+                          '4',
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            Container(
-              width: 100,
-              color: Colors.green,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
