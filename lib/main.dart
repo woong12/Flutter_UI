@@ -10,20 +10,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Center(
-      child: Container(
-        width: 50,
-        height: 50,
-        color: Colors.blue,
+      home: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Icon(Icons.star),
+            Icon(Icons.star),
+            Icon(Icons.star),
+          ],
+        ),
       ),
-    )
-        // Scaffold(
-        //   backgroundColor: Colors.white,
-        //   body: Container(
-        //     alignment: Alignment.center,
-        //     child: Image.asset('assets/bongocat.png'),
-        //   ),
-        // ),
-        );
+    );
   }
 }
