@@ -10,33 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        body: ShopItem(),
-      ),
-    );
-  }
-}
-
-class ShopItem extends StatelessWidget {
-  const ShopItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-        Text('안녕'),
-      ],
+      home: Scaffold(),
     );
   }
 }
