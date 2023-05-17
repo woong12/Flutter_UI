@@ -15,7 +15,9 @@ class _AppState extends State<App> {
   int counter = 0;
 
   void onCliked() {
-    counter += 1;
+    setState(() {
+      counter += 1;
+    });
   }
 
   @override
@@ -28,7 +30,7 @@ class _AppState extends State<App> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Click Country',
+                'Click Count',
                 style: TextStyle(
                   fontSize: 30,
                 ),
