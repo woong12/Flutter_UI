@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: IconButton(
                     iconSize: 120,
                     color: Theme.of(context).cardColor,
-                    onPressed: isRunning ? onResetPressed : () {},
+                    onPressed: isRunning ? onResetPressed : onResetPressed,
                     icon: const Icon(Icons.restart_alt_rounded),
                   ),
                 ),
