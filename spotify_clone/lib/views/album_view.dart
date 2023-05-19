@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/album_card.dart';
+
 class AlbumView extends StatefulWidget {
-  const AlbumView({super.key});
+  final ImageProvider image;
+
+  const AlbumView({required Key key, required this.image}) : super(key: key);
 
   @override
   State<AlbumView> createState() => _AlbumViewState();
@@ -12,8 +16,9 @@ class _AlbumViewState extends State<AlbumView> {
   double imageSize = 0;
   double initialSize = 240;
   double containerHeight = 500;
-  double containerinitialHeight = 500;
+  double containerinitalHeight = 500;
   double imageOpacity = 1;
+  bool showTopBar = false;
   @override
   void initState() {
     imageSize = initialSize;
@@ -23,11 +28,16 @@ class _AlbumViewState extends State<AlbumView> {
         if (imageSize < 0) {
           imageSize = 0;
         }
-        containerHeight = containerinitialHeight - scrollController.offset;
+        containerHeight = containerinitalHeight - scrollController.offset;
         if (containerHeight < 0) {
           containerHeight = 0;
         }
         imageOpacity = imageSize / initialSize;
+        if (scrollController.offset > 224) {
+          showTopBar = true;
+        } else {
+          showTopBar = false;
+        }
         setState(() {});
       });
     super.initState();
@@ -35,6 +45,7 @@ class _AlbumViewState extends State<AlbumView> {
 
   @override
   Widget build(BuildContext context) {
+    final cardSize = MediaQuery.of(context).size.width / 2 - 32;
     return Scaffold(
       body: Stack(
         children: [
@@ -60,7 +71,7 @@ class _AlbumViewState extends State<AlbumView> {
                       ],
                     ),
                     child: Image(
-                      image: const AssetImage("assets/album4.webp"),
+                      image: widget.image,
                       width: imageSize,
                       height: imageSize,
                       fit: BoxFit.cover,
@@ -89,6 +100,15 @@ class _AlbumViewState extends State<AlbumView> {
                         colors: [
                           Colors.black.withOpacity(0),
                           Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0.6),
+                          Colors.black.withOpacity(0.9),
                           Colors.black.withOpacity(1),
                         ],
                       ),
@@ -130,46 +150,15 @@ class _AlbumViewState extends State<AlbumView> {
                                   children: [
                                     Row(
                                       children: const [
-                                        Icon(Icons.favorite),
+                                        Icon(
+                                          Icons.favorite,
+                                          color:
+                                              Color.fromARGB(255, 242, 90, 79),
+                                        ),
                                         SizedBox(width: 16),
                                         Icon(Icons.more_horiz),
                                       ],
                                     ),
-                                    Positioned(
-                                      right: 0,
-                                      bottom: 0,
-                                      child: Stack(
-                                        alignment: Alignment.bottomRight,
-                                        children: [
-                                          Container(
-                                            width: 64,
-                                            height: 64,
-                                            alignment: Alignment.center,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Color(0xff14d860),
-                                            ),
-                                            child: const Icon(
-                                              Icons.play_arrow,
-                                              size: 38,
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 24,
-                                            height: 24,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                            ),
-                                            child: const Icon(
-                                              Icons.shuffle,
-                                              color: Colors.black,
-                                              size: 14,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 )
                               ],
@@ -180,30 +169,158 @@ class _AlbumViewState extends State<AlbumView> {
                     ),
                   ),
                   Container(
+                    padding: const EdgeInsets.all(16),
                     color: Colors.black,
-                    height: 1000,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                        const SizedBox(height: 32),
+                        Text(
+                          "You might also like",
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album3.webp"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album5.webp"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album6.webp"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album9.webp"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album1.webp"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: const AssetImage("assets/album4.webp"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
             ),
           ),
+
           // App bar
           Positioned(
-              child: Container(
-            child: Container(
-              color: const Color(0xffc61855),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 8,
-              ),
-              child: SafeArea(
-                child: Row(
+              child: AnimatedContainer(
+            duration: const Duration(milliseconds: 250),
+            color: showTopBar
+                ? const Color(0xFFC61855).withOpacity(1)
+                : const Color(0xFFC61855).withOpacity(0),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: SafeArea(
+              child: SizedBox(
+                height: 40,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: Alignment.center,
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.keyboard_arrow_left),
+                    Positioned(
+                      left: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Icon(
+                          Icons.keyboard_arrow_left,
+                          size: 38,
+                        ),
+                      ),
                     ),
-                    const Text("Life goes on"),
+                    AnimatedOpacity(
+                      duration: const Duration(milliseconds: 250),
+                      opacity: showTopBar ? 1 : 0,
+                      child: Text(
+                        "Ophelia",
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom:
+                          85 - containerHeight.clamp(150.0, double.infinity),
+                      child: Stack(
+                        alignment: Alignment.bottomRight,
+                        children: [
+                          Container(
+                            width: 64,
+                            height: 64,
+                            alignment: Alignment.center,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xff14D860),
+                            ),
+                            child: const Icon(
+                              Icons.play_arrow,
+                              size: 38,
+                            ),
+                          ),
+                          Container(
+                            width: 24,
+                            height: 24,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                            ),
+                            child: const Icon(
+                              Icons.shuffle,
+                              color: Colors.black,
+                              size: 14,
+                            ),
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),

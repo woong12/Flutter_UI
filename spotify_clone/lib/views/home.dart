@@ -79,7 +79,11 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
+                                  builder: (context) => AlbumView(
+                                    image:
+                                        const AssetImage("assets/album4.webp"),
+                                    key: UniqueKey(),
+                                  ),
                                 ),
                               );
                             },
@@ -92,7 +96,11 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
+                                  builder: (context) => AlbumView(
+                                    image:
+                                        const AssetImage("assets/album1.webp"),
+                                    key: UniqueKey(),
+                                  ),
                                 ),
                               );
                             },
@@ -105,7 +113,11 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
+                                  builder: (context) => AlbumView(
+                                    image:
+                                        const AssetImage("assets/album2.webp"),
+                                    key: UniqueKey(),
+                                  ),
                                 ),
                               );
                             },
@@ -118,7 +130,11 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
+                                  builder: (context) => AlbumView(
+                                    image:
+                                        const AssetImage("assets/album3.webp"),
+                                    key: UniqueKey(),
+                                  ),
                                 ),
                               );
                             },
@@ -131,7 +147,11 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
+                                  builder: (context) => AlbumView(
+                                    image:
+                                        const AssetImage("assets/album5.webp"),
+                                    key: UniqueKey(),
+                                  ),
                                 ),
                               );
                             },
