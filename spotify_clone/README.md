@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# result images
+
+<img width="300" height="600" src="image/main_page.png">
+<img width="300" height="600" src="image/main_page2.png">
+<img width="300" height="600" src="image/music_page.png">
+<img width="300" height="600" src="image/music_page2.png">
