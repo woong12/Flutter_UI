@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # result images
 
-<img width="300" height="600" src="image/main_page.png">
-<img width="300" height="600" src="image/main_page2.png">
-<img width="300" height="600" src="image/music_page.png">
-<img width="300" height="600" src="image/music_page2.png">
+<img width="200" height="400" src="image/main_page.png">
+<img width="200" height="400" src="image/main_page2.png">
+<img width="200" height="400" src="image/music_page.png">
+<img width="200" height="400" src="image/music_page2.png">
