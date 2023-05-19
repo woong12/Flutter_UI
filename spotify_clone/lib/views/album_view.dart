@@ -188,13 +188,13 @@ class _AlbumViewState extends State<AlbumView> {
                             children: [
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
+                                label: "2steps",
                                 image: const AssetImage("assets/album3.webp"),
                                 onTap: () {},
                               ),
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
+                                label: "Shape of you",
                                 image: const AssetImage("assets/album5.webp"),
                                 onTap: () {},
                               ),
@@ -208,14 +208,14 @@ class _AlbumViewState extends State<AlbumView> {
                             children: [
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
-                                image: const AssetImage("assets/album6.webp"),
+                                label: "Intentions",
+                                image: const AssetImage("assets/album7.webp"),
                                 onTap: () {},
                               ),
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
-                                image: const AssetImage("assets/album9.webp"),
+                                label: "Paris in the rain",
+                                image: const AssetImage("assets/album8.webp"),
                                 onTap: () {},
                               ),
                             ],
@@ -228,13 +228,13 @@ class _AlbumViewState extends State<AlbumView> {
                             children: [
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
+                                label: "Photograph",
                                 image: const AssetImage("assets/album1.webp"),
                                 onTap: () {},
                               ),
                               AlbumCard(
                                 size: cardSize,
-                                label: "Get Turnt",
+                                label: "Eyes Closed",
                                 image: const AssetImage("assets/album4.webp"),
                                 onTap: () {},
                               ),
@@ -281,7 +281,7 @@ class _AlbumViewState extends State<AlbumView> {
                       duration: const Duration(milliseconds: 250),
                       opacity: showTopBar ? 1 : 0,
                       child: Text(
-                        "Ophelia",
+                        "Spotify",
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ),

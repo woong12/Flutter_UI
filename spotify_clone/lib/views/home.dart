@@ -223,7 +223,7 @@ class _HomeViewState extends State<HomeView> {
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            'Recently played',
+                            'Popular new releases',
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
